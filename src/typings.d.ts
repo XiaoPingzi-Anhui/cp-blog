@@ -1,5 +1,12 @@
-declare module 'moment' {
-  import { Dayjs } from 'dayjs';
+declare module "*.css";
+declare module "*.png";
+declare module "*.html";
+declare module "*.less" {
+  const classes: { readonly [key: string]: string };
+  export = classes;
+}
+declare module "moment" {
+  import { Dayjs } from "dayjs";
   namespace moment {
     type Moment = Dayjs;
   }
@@ -7,7 +14,7 @@ declare module 'moment' {
   export as namespace moment;
 }
 
-declare type Metric = import('web-vitals/dist/modules/types').Metric;
+declare type Metric = import("web-vitals/dist/modules/types").Metric;
 
 declare interface Window {
   performance_fcp: Metric;
@@ -15,4 +22,3 @@ declare interface Window {
   performance_fid: Metric;
   performance_lcp: Metric;
 }
-
