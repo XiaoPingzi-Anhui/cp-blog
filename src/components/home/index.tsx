@@ -10,7 +10,7 @@ export default function Home() {
       <HomeWrapper ref={scrollRef}>
         <div
           style={{ height: 1500 }}
-        ></div>
+        >hello</div>
       </HomeWrapper>
       <BackToTop target={() => scrollRef.current || window} />
     </>
