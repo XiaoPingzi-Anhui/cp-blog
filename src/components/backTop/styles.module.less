@@ -1,0 +1,77 @@
+.backtop_wrapper {
+  position: fixed;
+  opacity: 0.6;
+}
+
+.qq_wechart {
+  height: 80px;
+  position: fixed;
+  bottom: 90px;
+  right: 15px;
+  span:first-child {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+  span {
+    display: block;
+    height: 40px;
+    width: 40px;
+    background-color: #a1afc9;
+    margin: auto;
+    font-size: 20px;
+    cursor: pointer;
+    svg {
+      margin-top: 10px;
+    }
+    &:hover {
+      background-color: #2e4e7e;
+    }
+  }
+}
+
+.backtop {
+  opacity: 0.6;
+  right: 15px;
+}
+
+.backtop_icon {
+  display: block;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #c2ccd0;
+  height: 60px;
+  font-size: 36px;
+  margin: auto;
+  svg {
+    margin-top: 12px;
+  }
+  &:hover {
+    font-size: 40px;
+  }
+}
+
+.popOverlay {
+  z-index: 1432 !important;
+  box-shadow: none;
+
+  :global {
+    .ant-popover-inner {
+      background-color: transparent;
+    }
+
+    .ant-popover-inner-content {
+      background-color: #e0f0e966;
+      width: 320px;
+      padding-bottom: 1px;
+      border-radius: 4px;
+      box-shadow: 0 2px 9px 2px rgba(0, 0, 0, 0.09),
+        0 1px 2px -2px rgba(0, 0, 0, 0.16);
+      .ant-image {
+        margin-left: 94px;
+      }
+    }
+    .ant-popover-arrow-content::before {
+      background-color: #e0f0e966;
+    }
+  }
+}
