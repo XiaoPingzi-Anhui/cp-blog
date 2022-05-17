@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import BackToTop from "@/components/backTop";
+import Poem from "../todayPoetry";
 import { HEADER_HEIGHT } from "../layouts/layoutsConfigs";
 
 export default function Home() {
@@ -8,9 +9,9 @@ export default function Home() {
   return (
     <>
       <HomeWrapper ref={scrollRef}>
-        <div
-          style={{ height: 1500 }}
-        >hello</div>
+        <div style={{ height: 1500 }}>
+          <Poem />
+        </div>
       </HomeWrapper>
       <BackToTop target={() => scrollRef.current || window} />
     </>

@@ -23,7 +23,7 @@ const BackToTop: FC<BackTopProps> = ({ ...restProps }) => {
               <p>
                 {`扫码添加作者${item === "qq" ? "QQ" : "微信"}，一起交流学习，`}
                 <strong>
-                  记得添加备注，说明是通过《菜狗搬砖》小站途径添加！
+                  请添加备注，说明是通过《菜狗搬砖》小站途径添加！否则作者可能不会通过验证！
                 </strong>
               </p>
             </div>
