@@ -24,6 +24,8 @@ export default function TodayPoetry() {
 
 const PoemWrapper = styled.div<{ text: string }>`
   font-size: 40px;
+  font-family: PingFangSC, PingFangSC-Regular;
+  font-weight: 600;
   position: relative;
   text-align: center;
   background-image: -webkit-linear-gradient(right, #355c7d, #6c5b7b, #c06c84);

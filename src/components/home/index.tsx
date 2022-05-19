@@ -3,6 +3,7 @@ import styled from "styled-components";
 import BackToTop from "@/components/backTop";
 import Poem from "../todayPoetry";
 import { HEADER_HEIGHT } from "../layouts/layoutsConfigs";
+import RomanColock from "../clock/romanColock";
 
 export default function Home() {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -12,6 +13,7 @@ export default function Home() {
         <div style={{ height: 1500 }}>
           <Poem />
         </div>
+        <RomanColock size={700} />
       </HomeWrapper>
       <BackToTop target={() => scrollRef.current || window} />
     </>
