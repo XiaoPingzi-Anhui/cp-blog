@@ -1,17 +1,17 @@
 import { ConfigProvider } from "antd";
 import zhCN from "antd/es/locale/zh_CN";
 import styled from "styled-components";
-import Home from "@/components/home";
-import Header from "@/components/layouts/header";
-import { HEADER_HEIGHT } from "@/components/layouts/layoutsConfigs";
+import { BrowserRouter } from "react-router-dom";
+import Main from "@/components/layouts";
 
 function App() {
   return (
     <ConfigProvider locale={zhCN}>
-      <AppWrapper>
-        <Header />
-        <Home />
-      </AppWrapper>
+      <BrowserRouter>
+        <AppWrapper>
+          <Main />
+        </AppWrapper>
+      </BrowserRouter>
     </ConfigProvider>
   );
 }
@@ -20,7 +20,7 @@ export default App;
 
 const AppWrapper = styled.div`
   &:before {
-    top: ${HEADER_HEIGHT}px;
+    top: 0;
     left: 0;
     right: 0;
     bottom: 0;

@@ -9,7 +9,7 @@ import S from "./styles.module.less";
 import qqImg from "@/assets/images/qq.png";
 import weChartImg from "@/assets/images/wechart.png";
 
-const showList = ["qq", "wechart"];
+const showList = ["qq", "weChart"];
 
 const BackToTop: FC<BackTopProps> = ({ ...restProps }) => {
   const showDom = useMemo(
@@ -39,10 +39,10 @@ const BackToTop: FC<BackTopProps> = ({ ...restProps }) => {
   );
 
   return (
-    <div className={S.backtop_wrapper}>
-      <div className={S.qq_wechart}>{showDom}</div>
-      <BackTop {...restProps} className={S.backtop}>
-        <VerticalAlignTopOutlined className={S.backtop_icon} />
+    <div className={S.backTop_wrapper}>
+      <div className={S.qq_weChart}>{showDom}</div>
+      <BackTop {...restProps} className={S.backTop}>
+        <VerticalAlignTopOutlined className={S.backTop_icon} />
       </BackTop>
     </div>
   );

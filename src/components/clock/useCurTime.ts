@@ -23,9 +23,7 @@ export default function useCurTime() {
   /* 每隔1s更新下时间 */
   useEffect(() => {
     getCurTime();
-    setInterval(() => {
-      getCurTime();
-    }, 1000);
+    setInterval(() => getCurTime(), 1000);
   }, [getCurTime]);
 
   return curTime;

@@ -1,28 +1,26 @@
 import { useRef } from "react";
 import styled from "styled-components";
 import BackToTop from "@/components/backTop";
-import Poem from "../todayPoetry";
-import { HEADER_HEIGHT } from "../layouts/layoutsConfigs";
-import RomanColock from "../clock/romanColock";
+import { HEADER_HEIGHT } from "@/components/layouts/layoutsConfigs";
+import Header from "@/components/layouts/header";
+import PageRoutes from "@/router";
 
-export default function Home() {
+export default function Main() {
   const scrollRef = useRef<HTMLDivElement>(null);
   return (
     <>
-      <HomeWrapper ref={scrollRef}>
-        <div style={{ height: 1500 }}>
-          <Poem />
-        </div>
-        <RomanColock size={700} />
-      </HomeWrapper>
+      <Header />
+      <MainWrapper ref={scrollRef}>
+        <PageRoutes />
+      </MainWrapper>
       <BackToTop target={() => scrollRef.current || window} />
     </>
   );
 }
 
-const HomeWrapper = styled.div`
+const MainWrapper = styled.div`
   height: calc(100vh - ${HEADER_HEIGHT}px);
-  overflow-y: visible;
+  overflow-y: overlay;
   overflow-x: hidden;
 
   &::-webkit-scrollbar {

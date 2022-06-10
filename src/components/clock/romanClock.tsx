@@ -6,7 +6,7 @@ import styled from "styled-components";
 import useCurTime from "./useCurTime";
 
 /** 达到这个大小，才会显示每个月 */
-const showMonthLableSize = 600;
+const showMonthLabelSize = 600;
 
 type Props = {
   size: number;
@@ -14,7 +14,7 @@ type Props = {
   highlightColor?: string;
   darkColor?: string;
 };
-const RomanColock: FC<Props> = ({
+const RomanClock: FC<Props> = ({
   size,
   backgroundColor = "black",
   highlightColor = "#fff",
@@ -25,7 +25,7 @@ const RomanColock: FC<Props> = ({
 
   const curTime = useCurTime();
 
-  const hasTotalMonth = useMemo(() => size >= showMonthLableSize, [size]);
+  const hasTotalMonth = useMemo(() => size >= showMonthLabelSize, [size]);
 
   useEffect(() => {
     const curDayNum = dayjs(dayjs().format("YYYYMM")).daysInMonth(); // 当前月份有多少天
@@ -78,7 +78,6 @@ const RomanColock: FC<Props> = ({
           // 计算出每一个dom元素的坐标
           const x = r * Math.sin((deg * Math.PI) / 180) + widthMid;
           const y = heightMid - r * Math.cos((deg * Math.PI) / 180);
-          console.log("item:", deg, "    ", item);
           return (i === 0 || (i === 1 && !hasTotalMonth)) &&
             deg !== 0 ? null : (
             <div
@@ -112,7 +111,7 @@ const RomanColock: FC<Props> = ({
   );
 };
 
-export default RomanColock;
+export default RomanClock;
 
 const ClockWrapper = styled.div<{ backgroundColor: string; size: number }>`
   position: relative;
@@ -128,6 +127,6 @@ const ClockWrapper = styled.div<{ backgroundColor: string; size: number }>`
     font-size: 12px;
     transform: scale(0.8);
     transition: left 1s, top 1s;
-    transform-origin: 0% 0%;
+    transform-origin: 0 0;
   }
 `;
