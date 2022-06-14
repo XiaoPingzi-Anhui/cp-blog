@@ -1,13 +1,18 @@
 import Poem from "@/components/todayPoetry";
-import RomanClock from "@/components/clock/romanClock";
+import styled from "styled-components";
 
 export default function Home() {
   return (
     <>
+      <TopBackground />
       <div style={{ height: 1500 }}>
         <Poem />
       </div>
-      <RomanClock size={700} />
     </>
   );
 }
+
+const TopBackground = styled.div`
+  background: url(https://picsum.photos/1800/400) center/cover;
+  height: 400px;
+`;

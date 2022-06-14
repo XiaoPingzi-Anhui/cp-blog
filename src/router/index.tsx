@@ -1,26 +1,22 @@
+import { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import Home from "@/pages/home";
+import routers from "./routersCfg";
 
 export default function Main() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog/?:id" element={<Blog />} />
-        <Route path="/clock/:id" element={<Clock />} />
-        <Route path="/game" element={<Game />}></Route>
-        <Route path="*" element={<Navigate to="/" />} />
-      </Routes>
-    </>
+    <Routes>
+      {routers.map((item, i) => (
+        <Route
+          key={i}
+          path={item.path}
+          element={
+            <Suspense fallback={<div>loading...</div>}>
+              <item.component />
+            </Suspense>
+          }
+        />
+      ))}
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   );
-}
-
-function Clock() {
-  return <div>时钟</div>;
-}
-function Blog() {
-  return <div>博客</div>;
-}
-function Game() {
-  return <div>游戏</div>;
 }
