@@ -12,10 +12,9 @@ export default function Header() {
 
   useThrottleEffect(
     () => {
-      if (scrollPosition?.top) {
-        set(scrollPosition?.top < throttleTop);
-        setThrottleTop(scrollPosition?.top);
-      }
+      const scrollTop = scrollPosition?.top;
+      set(scrollTop ? scrollTop < throttleTop : true);
+      setThrottleTop(scrollTop ?? 0);
     },
     [scrollPosition?.top, set, setThrottleTop],
     { wait: 300 }
@@ -30,13 +29,14 @@ export default function Header() {
 
       <MiddleMenus />
 
-      {/*<div>我是右边的内容</div>*/}
+      <div>我是右边的内容</div>
     </HeaderWrapper>
   );
 }
 
 const HeaderWrapper = styled.div<{ showHeader: boolean }>`
   position: fixed;
+  z-index: 999;
   top: 0;
   width: 100%;
   min-width: 1280px;

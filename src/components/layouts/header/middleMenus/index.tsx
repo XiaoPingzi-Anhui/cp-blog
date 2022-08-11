@@ -16,7 +16,7 @@ const items = [
   },
   {
     label: "文章",
-    key: "/blog",
+    key: "/blogLists",
     icon: <ReadOutlined />,
   },
   {

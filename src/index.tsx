@@ -41,10 +41,11 @@ root.render(
     关于使用废弃的 findDOMNode 方法的警告
     检测意外的副作用
     检测过时的 context API
+    但是用了之后开发环境的组件会重复调用！！！！所以还不不用了
   */
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  //<React.StrictMode>
+  <App />
+  //</React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

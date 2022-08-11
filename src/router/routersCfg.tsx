@@ -6,13 +6,13 @@ interface RouterCfg {
   children?: RouterCfg[];
 }
 
-const routers = [
+const routers: RouterCfg[] = [
   {
     path: "/",
     component: lazy(() => import("@/pages/home")),
   },
   {
-    path: "/blog/:id",
+    path: "/blogLists",
     component: lazy(() => import("@/pages/blog")),
   },
   {

@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import styled from "styled-components";
 import BackToTop from "@/components/backTop";
 import Header from "@/components/layouts/header";
 import PageRoutes from "@/router";
