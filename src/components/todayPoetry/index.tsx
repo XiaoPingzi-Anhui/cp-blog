@@ -17,12 +17,10 @@ export default function TodayPoetry() {
     );
   });
 
-  return (
-    <PoemWrapper text={poem}>{poem.substring(0, poem.length - 1)}</PoemWrapper>
-  );
+  return <PoemWrapper>{poem.substring(0, poem.length - 1)}</PoemWrapper>;
 }
 
-const PoemWrapper = styled.div<{ text: string }>`
+export const PoemWrapper = styled.div`
   font-size: 40px;
   font-family: PingFangSC, PingFangSC-Regular;
   font-weight: 600;
