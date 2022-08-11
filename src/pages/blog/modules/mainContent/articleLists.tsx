@@ -1,5 +1,5 @@
 import React from "react";
-import { Collapse, Badge, Card, Tag, Col, Divider, Row } from "antd";
+import { Collapse, Badge, Card, Tag, Col, Row } from "antd";
 import dayjs from "dayjs";
 import { EyeOutlined } from "@ant-design/icons";
 import styled from "styled-components";
@@ -12,6 +12,7 @@ export default function ArticleLists() {
   const {
     state: { filterArticles },
   } = useCtx();
+
   const articleAry = Object.entries(filterArticles);
   return (
     <Collapse defaultActiveKey={articleAry?.[0]?.[0] ?? ""}>
@@ -22,10 +23,10 @@ export default function ArticleLists() {
               <Badge.Ribbon text={category} key={_id} color={colorLists[i]}>
                 <Card hoverable title={title} size="small">
                   <Row>
-                    <Col span={8}>
+                    <Col span={9}>
                       发布时间：{dayjs(createdAt).format("YYYY-MM-DD")}
                     </Col>
-                    <Col span={14}>
+                    <Col span={13}>
                       {lables ? (
                         <>
                           标签：
