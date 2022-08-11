@@ -3,7 +3,39 @@ import { Collapse, Badge, Card, Tag, Col, Row } from "antd";
 import dayjs from "dayjs";
 import { EyeOutlined } from "@ant-design/icons";
 import { useCtx } from "../../context";
-import { colorLists, tagColors } from "@/assets/styles/colors";
+//import { colorLists, tagColors } from "@/assets/styles/colors";
+export const colorLists = [
+  "#3986fe", // blue
+  "#f26279", // pink
+  "#f9d237", // yellow
+  "#35caca", // seagreen
+  "#73e6bf", // lightgreen
+  "#4cca72", // green
+  "#f57f50", // orange
+  "#db80d1", // purpose
+  "#9d8aee", // lightpurpose
+  "#529ceb", // lightblue
+  "#965ee3", // darkpurpose
+  "#f08882", // lightorange
+  "#60c3d2", // lightseageen
+  "#edb965", // lightyellow
+  "#7d90db", // slateblue
+  "#9cd88a", // grassgreen
+];
+
+export const tagColors = [
+  "magenta",
+  "red",
+  "volcano",
+  "orange",
+  "gold",
+  "lime",
+  "green",
+  "cyan",
+  "blue",
+  "geekblue",
+  "purple",
+];
 
 const { Panel } = Collapse;
 
