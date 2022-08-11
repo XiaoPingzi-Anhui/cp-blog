@@ -2,7 +2,6 @@ import React from "react";
 import { Collapse, Badge, Card, Tag, Col, Row } from "antd";
 import dayjs from "dayjs";
 import { EyeOutlined } from "@ant-design/icons";
-import styled from "styled-components";
 import { useCtx } from "../../context";
 import { colorLists, tagColors } from "@/assets/styles/colors";
 
