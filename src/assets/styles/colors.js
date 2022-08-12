@@ -54,4 +54,6 @@ const tagColors = [
 
 module.exports = {
   base,
+  tagColors,
+  colorLists,
 };

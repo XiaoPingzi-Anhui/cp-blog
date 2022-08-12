@@ -26,6 +26,7 @@ const PageWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   background-color: #fff;
+  min-height: calc(100vh - ${PageMarginTop + PageMarginBottom}px);
   margin: ${PageMarginTop}px 20px ${PageMarginBottom}px;
   @media (min-width: 1366px) {
     margin: ${PageMarginTop}px 60px ${PageMarginBottom}px;

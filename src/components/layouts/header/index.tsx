@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Avatar } from "antd";
 import { useThrottleEffect, useSafeState, useBoolean } from "ahooks";
 import MiddleMenus from "@/components/layouts/header/middleMenus";
 import { HEADER_HEIGHT } from "../layoutsConfigs";
@@ -23,13 +24,15 @@ export default function Header() {
   return (
     <HeaderWrapper showHeader={showHeader}>
       <div className={"left-wrapper"}>
-        <img src={logoSvg} alt={""}></img>
+        <img src={logoSvg} alt={""} />
         <div className={"left-title"}>菜狗搬砖小站</div>
       </div>
 
       <MiddleMenus />
 
-      <div>我是右边的内容</div>
+      <div style={{ paddingRight: "5%" }}>
+        <Avatar icon={<img src={logoSvg} alt={""} />} />
+      </div>
     </HeaderWrapper>
   );
 }

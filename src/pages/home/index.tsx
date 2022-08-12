@@ -5,14 +5,14 @@ export default function Home() {
   return (
     <>
       <TopBackground />
-      <div style={{ height: 1500 }}>
-        <Poem />
-      </div>
+      {/* <div style={{ height: 1500 }}> */}
+      <Poem />
+      {/* </div> */}
     </>
   );
 }
 
 const TopBackground = styled.div`
-  background: url(https://picsum.photos/1800/400) center/cover;
-  height: 400px;
+  background: url(https://picsum.photos/1920/1280) center/cover;
+  height: 100vh;
 `;

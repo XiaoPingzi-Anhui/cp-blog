@@ -1,1 +1,1 @@
-export { base as baseColor } from "./colors";
+export { base as baseColor, tagColors, colorLists } from "./colors";

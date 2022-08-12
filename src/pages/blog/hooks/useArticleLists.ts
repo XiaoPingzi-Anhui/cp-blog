@@ -3,7 +3,7 @@ import { useRequest } from "ahooks";
 import { Article } from "@/api";
 import { getArticleLists } from "@/api/article";
 
-type articleListsType = Record<string, Article[]>;
+export type articleListsType = Record<string, Article[]>;
 type ArticleInfosType = {
   articleLists: articleListsType;
   allCategories: string[];

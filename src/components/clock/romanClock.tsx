@@ -115,6 +115,7 @@ export default RomanClock;
 
 const ClockWrapper = styled.div<{ backgroundColor: string; size: number }>`
   position: relative;
+  margin: auto;
   background-color: ${({ backgroundColor }) => backgroundColor};
   height: ${({ size }) => size}px;
   width: ${({ size }) => size}px;

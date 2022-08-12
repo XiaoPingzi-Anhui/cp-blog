@@ -12,9 +12,9 @@ export default function Main() {
           path={item.path}
           element={
             <Suspense fallback={<div>loading...</div>}>
-              {/* <KeepAlive key={item.path} name={item.path} id={item.path}> */}
-              <item.component />
-              {/* </KeepAlive> */}
+              <KeepAlive id={String(i)}>
+                <item.component />
+              </KeepAlive>
             </Suspense>
           }
         />

@@ -17,6 +17,7 @@ const Inner = () => {
     update(() => ({
       allArticles: articleLists,
       filterArticles: articleLists,
+      searchArticles: {},
       allCategories,
       allLables,
       loading,

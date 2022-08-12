@@ -21,10 +21,12 @@ export default function TodayPoetry() {
 }
 
 export const PoemWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  width: 100%;
   font-size: 40px;
   font-family: PingFangSC, PingFangSC-Regular;
   font-weight: 600;
-  position: relative;
   text-align: center;
   background-image: -webkit-linear-gradient(right, #355c7d, #6c5b7b, #c06c84);
   -webkit-background-clip: text;
