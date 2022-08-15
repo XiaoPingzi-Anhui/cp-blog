@@ -100,7 +100,9 @@ export default function Filter() {
         onChange={(value) => setSegmentValue(value as FilterWay)}
       />
       {segmentValue === FilterWay.Title ? (
-        <Search onChange={onChange} />
+        <FilterContent>
+          <Search onChange={onChange} searchKey={searchKey} />
+        </FilterContent>
       ) : (
         <FilterContent>{selectTags(segmentValue)}</FilterContent>
       )}

@@ -56,7 +56,9 @@ export default function useFilter({
           break;
         case FilterWay.Title:
           draft.searchArticles = getCategory(
-            articles.filter((item) => item.title.includes(titleKey))
+            titleKey
+              ? articles.filter((item) => item.title.includes(titleKey))
+              : []
           );
           break;
         default:
