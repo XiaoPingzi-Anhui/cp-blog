@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import { KeepAlive } from "react-activation";
+// import { KeepAlive } from "react-activation";
 import routers from "./routersCfg";
 
 export default function Main() {
@@ -12,9 +12,9 @@ export default function Main() {
           path={item.path}
           element={
             <Suspense fallback={<div>loading...</div>}>
-              <KeepAlive id={String(i)}>
-                <item.component />
-              </KeepAlive>
+              {/* <KeepAlive id={String(i)}> */}
+              <item.component />
+              {/* </KeepAlive> */}
             </Suspense>
           }
         />

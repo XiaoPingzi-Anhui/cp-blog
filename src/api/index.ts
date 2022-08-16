@@ -8,6 +8,13 @@ export enum ResCode {
   Failed = "Internal Server Error",
 }
 
+/** 请求数据的缓存时间，10分钟 */
+export const staleTime = 600000;
+
+export enum CacheKey {
+  Article = "article",
+}
+
 export interface commonRes {
   data?: Article[];
   info: ResInfo;
