@@ -13,7 +13,6 @@ const Inner = () => {
 
   useEffect(() => {
     const { articleLists, allCategories, allLables } = articleInfos;
-    console.log("articleInfos:", articleInfos);
     update(() => ({
       allArticles: articleLists,
       filterArticles: articleLists,

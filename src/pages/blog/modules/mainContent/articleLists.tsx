@@ -1,9 +1,11 @@
 import { Collapse, Badge, Card, Tag, Col, Row } from "antd";
 import dayjs from "dayjs";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 import { EyeOutlined } from "@ant-design/icons";
 import { colorLists, tagColors } from "@/assets/styles";
 import { useCtx } from "../../context";
+import { BlogDetailUrl } from "@/router/routersCfg";
 
 const { Panel } = Collapse;
 
@@ -11,6 +13,7 @@ export default function ArticleLists() {
   const {
     state: { filterArticles },
   } = useCtx();
+  const navigate = useNavigate();
 
   const articleAry = Object.entries(filterArticles);
   return (
@@ -20,7 +23,12 @@ export default function ArticleLists() {
           {articles.map(
             ({ title, category, _id, readCount, lables, createdAt }) => (
               <Badge.Ribbon text={category} key={_id} color={colorLists[i]}>
-                <MyCard hoverable title={title} size="small">
+                <MyCard
+                  hoverable
+                  title={title}
+                  size="small"
+                  onClick={() => navigate(`${BlogDetailUrl}/${_id}`)}
+                >
                   <Row>
                     <Col span={8}>
                       发布时间：{dayjs(createdAt).format("YYYY-MM-DD")}

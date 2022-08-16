@@ -7,26 +7,27 @@ import {
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { HEADER_HEIGHT } from "@/components/layouts/layoutsConfigs";
+import { HomeUrl, BlogListsUrl, ClockUrl, GameUrl } from "@/router/routersCfg";
 
 const items = [
   {
     label: "首页",
-    key: "/",
+    key: HomeUrl,
     icon: <HomeOutlined />,
   },
   {
     label: "文章",
-    key: "/blogLists",
+    key: BlogListsUrl,
     icon: <ReadOutlined />,
   },
   {
     label: "时钟鉴赏",
-    key: "/clock/romanClock",
+    key: `${ClockUrl}/romanClock`,
     icon: <DashboardOutlined />,
   },
   {
     label: "小游戏",
-    key: "/game",
+    key: GameUrl,
     icon: (
       <span
         role="img"
