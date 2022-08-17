@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { Collapse, Badge, Card, Tag, Col, Row } from "antd";
 import dayjs from "dayjs";
 import styled from "styled-components";
@@ -15,7 +16,14 @@ export default function ArticleLists() {
   } = useCtx();
   const navigate = useNavigate();
 
-  const articleAry = Object.entries(filterArticles);
+  const articleAry = useMemo(
+    () =>
+      Object.entries(filterArticles).sort((a, b) =>
+        b[0].localeCompare(a[0], "zh")
+      ),
+    [filterArticles]
+  );
+
   return (
     <MyCollapse defaultActiveKey={articleAry?.[0]?.[0] ?? ""}>
       {articleAry.map(([category, articles], i) => (

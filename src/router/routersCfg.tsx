@@ -1,8 +1,9 @@
 import { lazy, LazyExoticComponent } from "react";
+import Home from "@/pages/home";
 
 interface RouterCfg {
   path: string;
-  component: LazyExoticComponent<() => JSX.Element>;
+  component: LazyExoticComponent<() => JSX.Element> | (() => JSX.Element);
   children?: RouterCfg[];
 }
 
@@ -20,7 +21,7 @@ export const GameUrl = "/game";
 const routers: RouterCfg[] = [
   {
     path: HomeUrl,
-    component: lazy(() => import("@/pages/home")),
+    component: Home,
   },
   {
     path: BlogListsUrl,
