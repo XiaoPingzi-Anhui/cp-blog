@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useRequest } from "ahooks";
+import dayjs from "dayjs";
 import { Article } from "@/api";
 import { getArticleLists } from "@/api/article";
 import { staleTime, CacheKey } from "@/api";
@@ -27,13 +28,18 @@ export default function useArticleLists() {
   useEffect(() => {
     if (data?.data) {
       let allLables: string[] = [];
-      const articleLists = data.data.reduce((pre, cur) => {
-        if (cur.lables) allLables = allLables.concat(cur.lables.split(","));
-        const curCategory = cur.category ? cur.category : "其他";
-        if (pre[curCategory]) pre[curCategory].push(cur);
-        else pre[curCategory] = [cur];
-        return pre;
-      }, {} as articleListsType);
+      const articleLists = data.data
+        /* 按发布时间倒序排列 */
+        .sort((a, b) =>
+          dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
+        )
+        .reduce((pre, cur) => {
+          if (cur.lables) allLables = allLables.concat(cur.lables.split(","));
+          const curCategory = cur.category ? cur.category : "其他";
+          if (pre[curCategory]) pre[curCategory].push(cur);
+          else pre[curCategory] = [cur];
+          return pre;
+        }, {} as articleListsType);
 
       setArticleInfos({
         articleLists,

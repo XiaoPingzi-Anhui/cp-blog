@@ -35,6 +35,8 @@ export type Article = {
   readCount: number;
   /** 创建时间 */
   createdAt: Date;
+  /** 更新时间 */
+  updatedAt: Date;
   /** 创建者id */
   userId?: string;
   /** 主体内容 */
