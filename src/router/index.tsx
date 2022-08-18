@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 // import { KeepAlive } from "react-activation";
 import routers from "./routersCfg";
@@ -11,11 +11,13 @@ export default function Main() {
           key={item.path}
           path={item.path}
           element={
-            <Suspense fallback={<div>loading...</div>}>
+            <>
+              {/* <Suspense fallback={<div>loading...</div>}>*/}
               {/* <KeepAlive id={String(i)}> */}
               <item.component />
               {/* </KeepAlive> */}
-            </Suspense>
+              {/* </Suspense>*/}
+            </>
           }
         />
       ))}

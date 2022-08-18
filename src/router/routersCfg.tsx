@@ -1,5 +1,9 @@
-import { lazy, LazyExoticComponent } from "react";
+import { /* lazy, */ LazyExoticComponent } from "react";
 import Home from "@/pages/home";
+import BlogList from "@/pages/blog";
+import BlogDetail from "@/pages/blogDetail";
+import Clock from "@/pages/clock";
+import Game from "@/pages/game";
 
 interface RouterCfg {
   path: string;
@@ -25,19 +29,20 @@ const routers: RouterCfg[] = [
   },
   {
     path: BlogListsUrl,
-    component: lazy(() => import("@/pages/blog")),
+    // component: lazy(() => import("@/pages/blog")),
+    component: BlogList,
   },
   {
     path: `${BlogDetailUrl}/:id`,
-    component: lazy(() => import("@/pages/blogDetail")),
+    component: BlogDetail,
   },
   {
     path: `${ClockUrl}/:id`,
-    component: lazy(() => import("@/pages/clock")),
+    component: Clock,
   },
   {
     path: GameUrl,
-    component: lazy(() => import("@/pages/game")),
+    component: Game,
   },
 ];
 
