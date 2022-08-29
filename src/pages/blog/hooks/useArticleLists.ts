@@ -27,6 +27,7 @@ export default function useArticleLists() {
 
   useEffect(() => {
     if (data?.data) {
+      console.log("test");
       let allLables: string[] = [];
       const articleLists = data.data
         /* 按发布时间倒序排列 */
