@@ -2,9 +2,13 @@ import { ReactNode } from "react";
 import styled from "styled-components";
 
 /** 外层页面的marginTop */
-export const PageMarginTop = 60;
+export const PAGE_MARGIN_TOP = 60;
 /** 外层页面的marginBottom */
-export const PageMarginBottom = 20;
+export const PAGE_MARGIN_BOTTOM = 20;
+/** 外层页面左右两边的小margin */
+export const PAGE_MARGIN_MIN = 20;
+/** 外层页面左右两边的大margin */
+export const PAGE_MARGIN_MAX = 60;
 
 export default function CommonPageWrap({ children }: { children: ReactNode }) {
   return (
@@ -26,9 +30,9 @@ const PageWrapper = styled.div`
 
 const ContentWrapper = styled.div`
   background-color: #fff;
-  min-height: calc(100vh - ${PageMarginTop + PageMarginBottom}px);
-  margin: ${PageMarginTop}px 20px ${PageMarginBottom}px;
+  min-height: calc(100vh - ${PAGE_MARGIN_TOP + PAGE_MARGIN_BOTTOM}px);
+  margin: ${PAGE_MARGIN_TOP}px ${PAGE_MARGIN_MIN}px ${PAGE_MARGIN_BOTTOM}px;
   @media (min-width: 1366px) {
-    margin: ${PageMarginTop}px 60px ${PageMarginBottom}px;
+    margin: ${PAGE_MARGIN_TOP}px ${PAGE_MARGIN_MAX}px ${PAGE_MARGIN_BOTTOM}px;
   }
 `;
