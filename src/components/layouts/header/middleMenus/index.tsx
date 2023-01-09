@@ -29,11 +29,7 @@ const items = [
     label: "小游戏",
     key: GameUrl,
     icon: (
-      <span
-        role="img"
-        aria-label="dashboard"
-        className="anticon anticon-dashboard"
-      >
+      <span role="img" aria-label="dashboard">
         <svg
           className="icon"
           viewBox="0 0 1024 1024"

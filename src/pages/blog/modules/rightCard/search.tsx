@@ -28,7 +28,7 @@ export default function Search({
           {
             value: "查看所有结果",
             key: "allOrEmpty",
-            checkedarticle: searchArticles,
+            checkedArticle: searchArticles,
             label:
               articleAry.length === 0 ? (
                 <Empty />
@@ -44,7 +44,7 @@ export default function Search({
           articleAry.map(([category, lists]) => ({
             value: `查看${category}分类中的结果`,
             key: category,
-            checkedarticle: { [category]: lists },
+            checkedArticle: { [category]: lists },
             label: (
               <ListItem>
                 <p>
@@ -60,7 +60,7 @@ export default function Search({
 
   const onSelect = useMemoizedFn((value, option) =>
     update((draft) => {
-      draft.filterArticles = option.checkedarticle;
+      draft.filterArticles = option.checkedArticle;
     })
   );
 

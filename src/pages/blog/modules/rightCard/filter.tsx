@@ -4,14 +4,14 @@ import { useMemoizedFn, useDebounceFn } from "ahooks";
 import { Segmented, Tag } from "antd";
 import { useCtx } from "../../context";
 import categoryPgn from "@/assets/images/category.png";
-import lablePng from "@/assets/images/lable.png";
+import labelPng from "@/assets/images/label.png";
 import searchPng from "@/assets/images/search.png";
 import useFilter from "../../hooks/useFilter";
 import Search from "./search";
 
 export enum FilterWay {
   Category = "按分类筛选",
-  Lable = "按标签筛选",
+  Label = "按标签筛选",
   Title = "按标题搜索",
 }
 
@@ -19,25 +19,25 @@ const { CheckableTag } = Tag;
 
 export default function Filter() {
   const {
-    state: { allCategories, alllabels },
+    state: { allCategories, allLabels },
   } = useCtx();
 
   const [segmentValue, setSegmentValue] = useState(FilterWay.Category);
   const [checkedCategory, setCheckedCategory] = useState(allCategories);
-  const [checkedLable, setCheckedLable] = useState(alllabels);
+  const [checkedLabel, setCheckedLabel] = useState(allLabels);
   const [searchKey, setSearchKey] = useState("");
 
   useFilter({
     checkedCategory,
-    checkedLable,
+    checkedLabel,
     titleKey: searchKey,
     type: segmentValue,
   });
 
   useEffect(() => {
     setCheckedCategory(allCategories);
-    setCheckedLable(alllabels);
-  }, [allCategories, alllabels]);
+    setCheckedLabel(allLabels);
+  }, [allCategories, allLabels]);
 
   const selectTags = useMemoizedFn((type: FilterWay) => {
     let info = {
@@ -45,11 +45,11 @@ export default function Filter() {
       checked: checkedCategory,
       setValue: setCheckedCategory,
     };
-    if (type === FilterWay.Lable)
+    if (type === FilterWay.Label)
       info = {
-        allList: alllabels,
-        checked: checkedLable,
-        setValue: setCheckedLable,
+        allList: allLabels,
+        checked: checkedLabel,
+        setValue: setCheckedLabel,
       };
     const { allList, checked, setValue } = info;
 
@@ -86,9 +86,9 @@ export default function Filter() {
             icon: <img src={categoryPgn} alt="" />,
           },
           {
-            label: FilterWay.Lable,
-            value: FilterWay.Lable,
-            icon: <img src={lablePng} alt="" />,
+            label: FilterWay.Label,
+            value: FilterWay.Label,
+            icon: <img src={labelPng} alt="" />,
           },
           {
             label: FilterWay.Title,
@@ -115,10 +115,10 @@ const FilterContent = styled.div`
   .ant-tag {
     margin-bottom: 6px;
   }
-  .ant-tag-checkable-checked {
+  .ant-tag-checkabel-checked {
     background-color: #44cef6;
   }
-  .ant-tag-checkable:active {
+  .ant-tag-checkabel:active {
     background-color: #177cb0;
   }
 `;

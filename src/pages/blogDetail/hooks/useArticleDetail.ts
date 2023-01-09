@@ -9,8 +9,7 @@ export default function useArticleDetail(id?: string) {
     manual: true,
     retryCount: 3,
   });
-  console.log("data：", data);
-  console.log("loading:", loading);
+
   useEffect(() => {
     !isUndefined(id) && run(id);
   }, [id, run]);

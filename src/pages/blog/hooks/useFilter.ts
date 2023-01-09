@@ -8,7 +8,7 @@ interface Props {
   /** 选中的分类 */
   checkedCategory: string[];
   /** 选中的标签 */
-  checkedLable: string[];
+  checkedLabel: string[];
   /** 标题搜索关键字 */
   titleKey: string;
   /** 筛选的分类 */
@@ -17,7 +17,7 @@ interface Props {
 
 export default function useFilter({
   checkedCategory,
-  checkedLable,
+  checkedLabel,
   titleKey,
   type,
 }: Props) {
@@ -43,13 +43,13 @@ export default function useFilter({
             articles.filter((item) => checkedCategory.includes(item.category))
           );
           break;
-        case FilterWay.Lable:
+        case FilterWay.Label:
           draft.filterArticles = getCategory(
             articles.filter((item) =>
               item.labels
                 ? item.labels
                     .split(",")
-                    .some((lable) => checkedLable.includes(lable))
+                    .some((label) => checkedLabel.includes(label))
                 : false
             )
           );
@@ -65,5 +65,5 @@ export default function useFilter({
           break;
       }
     });
-  }, [type, checkedCategory, checkedLable, titleKey, update]);
+  }, [type, checkedCategory, checkedLabel, titleKey, update]);
 }

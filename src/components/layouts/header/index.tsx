@@ -3,7 +3,7 @@ import { Avatar } from "antd";
 import { useThrottleEffect, useSafeState, useBoolean } from "ahooks";
 import MiddleMenus from "@/components/layouts/header/middleMenus";
 import { HEADER_HEIGHT } from "../layoutsConfigs";
-import useDocumentScroll from "@/utils/useDucumentScroll";
+import useDocumentScroll from "@/utils/useDocumentScroll";
 import logoSvg from "@/assets/images/logo.svg";
 
 export default function Header() {
