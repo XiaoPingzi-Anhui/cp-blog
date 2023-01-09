@@ -9,14 +9,14 @@ export type articleListsType = Record<string, Article[]>;
 type ArticleInfosType = {
   articleLists: articleListsType;
   allCategories: string[];
-  allLables: string[];
+  alllabels: string[];
 };
 
 export default function useArticleLists() {
   const [articleInfos, setArticleInfos] = useState<ArticleInfosType>({
     articleLists: {},
     allCategories: [],
-    allLables: [],
+    alllabels: [],
   });
 
   const { error, loading, data } = useRequest(getArticleLists, {
@@ -27,14 +27,14 @@ export default function useArticleLists() {
 
   useEffect(() => {
     if (data?.data) {
-      let allLables: string[] = [];
+      let alllabels: string[] = [];
       const articleLists = data.data
         /* 按发布时间倒序排列 */
         .sort((a, b) =>
           dayjs(a.createdAt).isBefore(dayjs(b.createdAt)) ? 1 : -1
         )
         .reduce((pre, cur) => {
-          if (cur.lables) allLables = allLables.concat(cur.lables.split(","));
+          if (cur.labels) alllabels = alllabels.concat(cur.labels.split(","));
           const curCategory = cur.category ? cur.category : "其他";
           if (pre[curCategory]) pre[curCategory].push(cur);
           else pre[curCategory] = [cur];
@@ -44,7 +44,7 @@ export default function useArticleLists() {
       setArticleInfos({
         articleLists,
         allCategories: Object.keys(articleLists),
-        allLables: Array.from(new Set(allLables)),
+        alllabels: Array.from(new Set(alllabels)),
       });
     }
   }, [data?.data]);

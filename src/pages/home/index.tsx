@@ -5,9 +5,7 @@ export default function Home() {
   return (
     <>
       <TopBackground />
-      {/* <div style={{ height: 1500 }}> */}
       <Poem />
-      {/* </div> */}
     </>
   );
 }

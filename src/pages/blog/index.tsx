@@ -12,13 +12,13 @@ const Inner = () => {
   const { update } = useCtx();
 
   useEffect(() => {
-    const { articleLists, allCategories, allLables } = articleInfos;
+    const { articleLists, allCategories, alllabels } = articleInfos;
     update(() => ({
       allArticles: articleLists,
       filterArticles: articleLists,
       searchArticles: {},
       allCategories,
-      allLables,
+      alllabels,
       loading,
     }));
   }, [articleInfos, loading, update]);

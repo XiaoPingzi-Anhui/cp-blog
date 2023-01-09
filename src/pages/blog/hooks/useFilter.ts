@@ -46,8 +46,8 @@ export default function useFilter({
         case FilterWay.Lable:
           draft.filterArticles = getCategory(
             articles.filter((item) =>
-              item.lables
-                ? item.lables
+              item.labels
+                ? item.labels
                     .split(",")
                     .some((lable) => checkedLable.includes(lable))
                 : false

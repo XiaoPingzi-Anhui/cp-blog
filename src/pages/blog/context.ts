@@ -9,7 +9,7 @@ interface State {
   /** 搜索关键字匹配的文章列表 */
   searchArticles: Record<string, Article[]>;
   /** 所有的标签 */
-  allLables: string[];
+  alllabels: string[];
   /** 所有的分类 */
   allCategories: string[];
   /** 加载状态 */
@@ -21,7 +21,7 @@ const defaultContext: State = {
   filterArticles: {},
   searchArticles: {},
   loading: true,
-  allLables: [],
+  alllabels: [],
   allCategories: [],
 };
 

@@ -29,7 +29,7 @@ export default function ArticleLists() {
       {articleAry.map(([category, articles], i) => (
         <Panel header={category} key={category}>
           {articles.map(
-            ({ title, category, _id, readCount, lables, createdAt }) => (
+            ({ title, category, _id, readCount, labels, createdAt }) => (
               <Badge.Ribbon text={category} key={_id} color={colorLists[i]}>
                 <MyCard
                   hoverable
@@ -42,10 +42,10 @@ export default function ArticleLists() {
                       发布时间：{dayjs(createdAt).format("YYYY-MM-DD")}
                     </Col>
                     <Col span={14}>
-                      {lables ? (
+                      {labels ? (
                         <>
                           标签：
-                          {lables?.split(",")?.map((item, i) => (
+                          {labels?.split(",")?.map((item, i) => (
                             <Tag
                               key={i}
                               color={

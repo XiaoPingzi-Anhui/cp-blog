@@ -19,12 +19,12 @@ const { CheckableTag } = Tag;
 
 export default function Filter() {
   const {
-    state: { allCategories, allLables },
+    state: { allCategories, alllabels },
   } = useCtx();
 
   const [segmentValue, setSegmentValue] = useState(FilterWay.Category);
   const [checkedCategory, setCheckedCategory] = useState(allCategories);
-  const [checkedLable, setCheckedLable] = useState(allLables);
+  const [checkedLable, setCheckedLable] = useState(alllabels);
   const [searchKey, setSearchKey] = useState("");
 
   useFilter({
@@ -36,8 +36,8 @@ export default function Filter() {
 
   useEffect(() => {
     setCheckedCategory(allCategories);
-    setCheckedLable(allLables);
-  }, [allCategories, allLables]);
+    setCheckedLable(alllabels);
+  }, [allCategories, alllabels]);
 
   const selectTags = useMemoizedFn((type: FilterWay) => {
     let info = {
@@ -47,7 +47,7 @@ export default function Filter() {
     };
     if (type === FilterWay.Lable)
       info = {
-        allList: allLables,
+        allList: alllabels,
         checked: checkedLable,
         setValue: setCheckedLable,
       };

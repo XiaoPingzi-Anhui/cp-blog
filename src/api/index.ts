@@ -30,7 +30,7 @@ export type Article = {
   /** 文章分类 */
   category: string;
   /** 文章标签 */
-  lables: string;
+  labels: string;
   /** 阅读量 */
   readCount: number;
   /** 创建时间 */
